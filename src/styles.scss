@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import "bootstrap/scss/bootstrap";
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.title {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-bottom: 2px solid #aaa;
+}
+.mat-form-field-appearance-fill .mat-form-field-flex {
+  background-color: transparent;
+}

@@ -1,0 +1,8 @@
+<div class="row">
+  <div class="col-3" [ngClass]="{'col-3':openFilter,'d-none':!openFilter}">
+    <app-filters [@inOutAnimation] *ngIf="openFilter"></app-filters>
+  </div>
+  <div class="col-9" [ngClass]="{'col-12':!openFilter,'col-9':openFilter}">
+    <router-outlet></router-outlet>
+  </div>
+</div>

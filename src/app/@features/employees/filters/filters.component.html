@@ -1,0 +1,28 @@
+<div class="mat-card shadow-none px-0">
+  <h3 class="text-center fs-2 title fw-bold p-4 mb-5">Filters</h3>
+  <div class="px-3 py-4">
+    <form [formGroup]="form" *ngIf="form" (ngSubmit)="submit()">
+      <div *ngFor="let filter of filters">
+        <mat-form-field appearance="fill" *ngIf="filter.type != 'dropdown'" class="mb-3 w-100 bg-transparent"
+          [floatLabel]="'never'">
+          <mat-label *ngIf="filter.type=='date'">Date</mat-label>
+          <input matInput [formControlName]="filter.title" [type]="filter.type" [placeholder]="filter.title">
+        </mat-form-field>
+        <mat-form-field class="select" *ngIf="filter.type === 'dropdown'" class="mb-3 w-100 bg-transparent">
+          <mat-label>{{filter.title}}</mat-label>
+          <mat-select [formControlName]="filter.title" [multiple]="filter.multiple">
+            <mat-option *ngFor="let item of filter.values" [value]="item?.alpha3Code">
+              {{item.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="submit text-center my-3">
+        <button type="submit" mat-raised-button color="primary">
+          Filter
+          <mat-icon>filter_list</mat-icon>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

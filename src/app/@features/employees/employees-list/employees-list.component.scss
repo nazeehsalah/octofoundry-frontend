@@ -1,0 +1,23 @@
+.mat-table {
+  overflow-x: auto;
+  table {
+    width: 100%;
+  }
+}
+
+mat-form-field {
+  font-size: 14px;
+  width: 96%;
+}
+
+::ng-deep {
+  .custom-style {
+    .mat-form-field-wrapper {
+      padding-bottom: 0;
+      margin: 0;
+    }
+  }
+  .mat-header-cell {
+    background-color: #eef0f2;
+  }
+}
