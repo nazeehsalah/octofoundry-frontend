@@ -18,10 +18,6 @@ export class DataService {
     return this.http.get<FilterItem[]>(`${this.url}/filters.json`);
   }
   getCustomDropdown(url: string): Observable<any[]> {
-    return this.http.get<any[]>(`${url}`, {
-      headers: {
-        Authorization: 'bearer e8fe7bcfa0684f178b30b31dc8f69542	',
-      },
-    });
+    return this.http.get<any[]>(`${url}`);
   }
 }
